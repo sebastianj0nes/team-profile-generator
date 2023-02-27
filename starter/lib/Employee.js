@@ -2,16 +2,16 @@
 // Employee class
 class Employee{
     // Constructor with employeeName,id,email parameters
-    constructor (employeeName, id, email){
-        // Setting employeeName,id,email values
-        this.employeeName = employeeName;
+    constructor (name, id, email){
+        // Setting name,id,email values
+        this.name = name;
         this.id = id;
         this.email = email;
     }
 
     // Get Methods
     getName () {
-        return this.employeeName;
+        return this.name;
     }
 
     getId () {

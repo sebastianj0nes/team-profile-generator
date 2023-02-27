@@ -16,34 +16,31 @@ const userInput = () =>
     inquirer.prompt([
         {
             type:"input",
-            message: "",
-            name: "",
+            message: "What is your manager's name?",
+            name: "manName",
         },
         {
             type:"input",
-            message: "",
-            name: "",
+            message: "What is your manager's ID?",
+            name: "manId",
         },
         {
             type:"input",
-            message: "",
-            name: "",
+            message: "What is your manager's email?",
+            name: "manEmail",
         },
         {
             type:"input",
-            message: "",
-            name: "",
+            message: "What is your manager's office number?",
+            name: "manOffNo",
         },
         {
-            type:"input",
-            message: "",
-            name: "",
+            type:"list",
+            message:"Now... ",
+            choices: ["Add an engineer", "Add an intern", "Finish with current members"],
+            name: "continueBuilding",
         },
-        {
-            type:"input",
-            message: "",
-            name: "",
-        },
-        
-    ])
+
+]);
+
 
