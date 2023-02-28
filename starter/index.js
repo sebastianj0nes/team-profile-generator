@@ -15,6 +15,7 @@ const render = require("./src/page-template.js");
 
 const getTeamData = () => {
 
+const employees = []
     // Take input from user about team manager
 const getManagerInput = () =>
     inquirer.prompt([
@@ -44,7 +45,8 @@ const getManagerInput = () =>
 // Create manager object from Manager class
 const createManager = (data) => {
     const manager = new Manager(data.manName, data.manId, data.manEmail, data.manOffNo);
-    console.log(manager);
+    // Push manager to employees array
+    employees.push(manager);
 }
 
     // Get engineer input 
@@ -75,12 +77,10 @@ const getEngineerInput = () =>
 
 // Create engineer object from Engineer class
 const createEngineer = (data) => {
-    // Create array for engineers
-    const engineers = []
     // Create new engineer object from data
     const engineer = new Engineer(data.engName, data.engId, data.engEmail, data.engGithub);
-    // Push this engineer into array
-    engineers.push(engineer);
+    // Push this engineer into employees array
+    employees.push(engineer);
 }
 
     // Get intern input
@@ -111,12 +111,10 @@ const getInternInput = () =>
 
 // Create intern object
 const createIntern = (data) => {
-    // Create intern array
-    const interns = []
     // Create new intern object from data
     const intern = new Engineer(data.intName, data.intId, data.intEmail, data.intSchool);
-    // Push intern into array
-    interns.push(intern);
+    // Push intern into employees array
+    employees.push(intern);
 }
 
 // Take input from user if to keep continue with team profile
