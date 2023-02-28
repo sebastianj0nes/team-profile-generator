@@ -39,7 +39,7 @@ const getManagerInput = () =>
             name: "manOffNo",
         }
         // Then create a manager object and continue with user input
-]).then((data) => {createManager(data), getMoreTeam(data)});
+]).then((data) => {createManager(data), getMoreTeam()});
 
 // Create manager object from Manager class
 const createManager = (data) => {
@@ -71,12 +71,16 @@ const getEngineerInput = () =>
             name: "engGithub",
         }
         // Then create a engineer object and continue with user input
-]).then((data) => {createEngineer(data), getMoreTeam(data)});
+]).then((data) => {createEngineer(data), getMoreTeam()});
 
 // Create engineer object from Engineer class
 const createEngineer = (data) => {
+    // Create array for engineers
+    const engineers = []
+    // Create new engineer object from data
     const engineer = new Engineer(data.engName, data.engId, data.engEmail, data.engGithub);
-    console.log(engineer);
+    // Push this engineer into array
+    engineers.push(engineer);
 }
 
     // Get intern input
@@ -103,12 +107,16 @@ const getInternInput = () =>
             name: "intSchool",
         }
         // Then create intern object and continue with user input
-]).then((data) => {createIntern(data), getMoreTeam(data)});
+]).then((data) => {createIntern(data), getMoreTeam()});
 
 // Create intern object
 const createIntern = (data) => {
+    // Create intern array
+    const interns = []
+    // Create new intern object from data
     const intern = new Engineer(data.intName, data.intId, data.intEmail, data.intSchool);
-    console.log(intern);
+    // Push intern into array
+    interns.push(intern);
 }
 
 // Take input from user if to keep continue with team profile
@@ -140,4 +148,9 @@ function checkContinue (data){
             break;
     }
 }
+
+// Start user input
+getManagerInput();
 }
+
+getTeamData();
