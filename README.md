@@ -3,7 +3,7 @@
 ## Description
 Command-line application taking user input to create a team profile webpage, showing their name, role, employee ID and conttact details. Using Node and Javascript to dynamically generate HTML.
 
-## Features
+## Features
 Following OOP paradigms, using; 
 - Constructors and inheritance
 - Encapsulating team profile information into separate classes
@@ -19,5 +19,6 @@ Follow the instructions given in the command line to correctly create the right 
 
 ## Photos
 
+![Sample of webpage from application](./assets/teamScreenshot.png "Sample of webpage from application")
 
 
