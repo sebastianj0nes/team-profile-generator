@@ -9,13 +9,15 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
+const { create } = require("domain");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
-
-const getTeamData = () => {
-
 const employees = []
+
+const init = new Promise (
+function getTeamData () {
+
     // Take input from user about team manager
 const getManagerInput = () =>
     inquirer.prompt([
@@ -112,7 +114,7 @@ const getInternInput = () =>
 // Create intern object
 const createIntern = (data) => {
     // Create new intern object from data
-    const intern = new Engineer(data.intName, data.intId, data.intEmail, data.intSchool);
+    const intern = new Intern(data.intName, data.intId, data.intEmail, data.intSchool);
     // Push intern into employees array
     employees.push(intern);
 }
@@ -135,20 +137,35 @@ function checkContinue (data){
 
     // Switch statement to check input
     switch (data.continueBuilding){
+        // If select add engineer
         case "Add an engineer":
+            // Call engineer func
             getEngineerInput();
             break;
+        // If select add intern
         case "Add an intern":
+            // Call intern func
             getInternInput();
             break;
+        // If done
         case "Finish":
-            console.log("done bozo");
+            // Create a file with the render function using all employees
+            createFile(outputPath,render(employees));
             break;
     }
 }
-
-// Start user input
+// Call manager input to start chain
 getManagerInput();
 }
+);
 
-getTeamData();
+// Function to create file based on input
+function createFile(fileName, data){
+    fs.writeFile(fileName, data, function(err){
+        if (err) throw (err);
+        console.log("File created!");
+    });
+}
+
+// Initialise the application
+init;
