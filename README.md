@@ -19,6 +19,6 @@ Follow the instructions given in the command line to correctly create the right 
 
 ## Photos
 
-![Sample of webpage from application](./assets/teamScreenshot.png "Sample of webpage from application")
+![Sample of webpage from application](./assets/screenshot.png "Sample of webpage from application")
 
 
