@@ -5,8 +5,9 @@ Command-line application taking user input to create a team profile webpage, sho
 
 ## Features
 Following OOP paradigms, using; 
-- Constructors and extender classes based on user input
+- Constructors and inheritance
 - Encapsulating team profile information into separate classes
+- Promises to ensure all user data is taken before continuing the app
 
 Using node package Inquirer to take user input, and Jest to run tests to make sure all functionality works correctly.
 
@@ -19,5 +20,4 @@ Follow the instructions given in the command line to correctly create the right 
 ## Photos
 
 
-## Link to website
 
